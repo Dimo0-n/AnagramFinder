@@ -1,4 +1,5 @@
 I created the project in Intellij IDEA.
+
 To configure the project, you first need to clone this project https://github.com/Dimo0-n/AnagramFinder.git .
 
 To run the project it is necessary to have OpenJDK 23 in the project configuration.
