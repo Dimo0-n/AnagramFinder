@@ -22,5 +22,5 @@ pentru a obtine o solutie mai optimizata am folosit parallelStream(), astfel in 
 prelucrate mai eficient prin repartizarea spre mai multe core-uri. Astfel un set de date este impartit in subseturi,
 iar la sfarsit sunt combinate rezultatele.
 
-In caz ca avem si mai multe cuvinte, de exemplu 100B, putem utiliza ExecutorService + Callable. Acesta varianta este in cazul
+In caz ca avem si mai multe cuvinte, de exemplu 100 miliarde, putem utiliza ExecutorService + Callable. Acesta varianta este in cazul
 cand este de lucru cu date multe si pentru un control mai serios.
