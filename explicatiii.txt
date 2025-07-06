@@ -1,0 +1,26 @@
+1. Pentru inceput se citesc datele din fisier si le salvam intr-o lista pentru a putea lucra mai usor cu ele.
+
+2. Pentru a gasi mai usor cuvintele anagrame avem nevoie de o manipulare a cuvintelor, deci facem o mapa,
+iar in ea vom folosi cuvântul sortat (literele în ordine alfabetică) ca cheie în mapă.
+Toata lista de cuvinte este parcursa si fiecare cuvant trece prin functia cuvantSort,
+deci forma lui sortata devine cheie a mapei, iar cuvantul se adauga in lista
+care corespunde cheiei. Dacă cheia există deja în mapă (adică alt cuvânt sortat la fel),
+se adaugă la lista asociată acelei chei.
+
+Exemplul din fisier va arata in asa mod:
+{
+  "acer" = [race, acre, care],
+  "act" = [act, cat],
+  "bee" = [bee],
+  "eert" = [tree]
+}
+
+3. Dupa ce sunt parcurse toate cuvintele, ramane doar de afisat listele ce corespund fiecarei chei din mapa noastra.
+
+Optimizare:
+pentru a obtine o solutie mai optimizata am folosit parallelStream(), astfel in caz ca avem un set mare de date, acestea vor fi
+prelucrate mai eficient prin repartizarea spre mai multe core-uri. Astfel un set de date este impartit in subseturi,
+iar la sfarsit sunt combinate rezultatele.
+
+In caz ca avem si mai multe cuvinte, de exemplu 100B, putem utiliza ExecutorService + Callable. Acesta varianta este in cazul
+cand este de lucru cu date multe si pentru un control mai serios.
